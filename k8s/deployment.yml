@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analyser-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: analyser-service
+  template:
+    metadata:
+      labels:
+        app: analyser-service
+    spec:
+      imagePullSecrets:
+        - name: githubtoken
+      containers:
+      - name: analyser-service
+        image: ghcr.io/panda-chess/pdc-analyser-service:main
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        env:
+        - name: PORT
+          value: "3000"

@@ -1,6 +1,6 @@
 import { describe } from '@jest/globals';
 import axios from 'axios';
-import { createTestGame, deleteTestGame } from "./../utils/tests/game.operations";
+import { createTestGame, deleteTestGame } from "../utils/tests/game.operations";
 import { PieceType, getMoves } from '@panda-chess/pdc-core';
 import { databaseService } from '@panda-chess/pdc-microservices-agregator';
 
